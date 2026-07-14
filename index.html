@@ -3,24 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simon says Game</title>
+    <title>Simon Says - Memorize & Match the Pattern</title>
+    <meta name="description" content="A beautiful, interactive Simon Says pattern memory game with retro synth sounds, glowing animations, and persistent high scores.">
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Simon Says Game</h1>
-    <h2>Press any key to start</h2>
+    <!-- Confetti Container -->
+    <div id="confetti-container" class="confetti-container"></div>
 
-    <div class="btn-container">
-        <div class="line-one">
-        <div class="btn red" type="button" id ="red">1</div>
-        <div class="btn yellow" type="button" id ="yellow">2</div>
+    <!-- Celebration Banner -->
+    <div id="celebration-banner" class="celebration-banner hidden">
+        <div class="celebration-content">
+            <span class="celebration-badge">🔥 NEW HIGH SCORE! 🔥</span>
+        </div>
     </div>
 
-    <div class="line-two">
-        <div class="btn green" type="button" id ="green">3</div>
-        <div class="btn purple" type="button" id ="purple">4</div>
-    </div>
-    </div>
+    <main class="game-container">
+        <header>
+            <h1 class="game-title">Simon Says</h1>
+            <p id="game-status" class="game-status">Press any key or click Start to play</p>
+        </header>
+
+        <!-- Scoreboard -->
+        <section class="scoreboard" aria-label="Score Board">
+            <div class="score-card">
+                <span class="score-label">Score</span>
+                <span class="score-value" id="current-score">0</span>
+            </div>
+            <div class="score-card high-score-card">
+                <span class="score-label">High Score</span>
+                <span class="score-value" id="high-score">0</span>
+            </div>
+        </section>
+
+        <!-- Gamepad Grid -->
+        <section class="gamepad-container" aria-label="Game Pad">
+            <div class="gamepad">
+                <button class="btn green" id="green" aria-label="Green button"></button>
+                <button class="btn red" id="red" aria-label="Red button"></button>
+                <button class="btn yellow" id="yellow" aria-label="Yellow button"></button>
+                <button class="btn purple" id="purple" aria-label="Purple button"></button>
+            </div>
+            <!-- Central core decor -->
+            <div class="gamepad-center">
+                <div class="center-glow"></div>
+            </div>
+        </section>
+
+        <!-- Controls -->
+        <section class="controls" aria-label="Controls">
+            <button id="start-btn" class="start-btn">Start Game</button>
+        </section>
+    </main>
+
     <script src="app.js"></script>
 </body>
 </html>
